@@ -1,6 +1,4 @@
-.video-section video {
-    width: 100%;
-    max-width: 800px;
-    border-radius: 10px;
-    outline: none;
-  }
+.body{
+  background-color: rgb(116, 160, 160);
+}
+
