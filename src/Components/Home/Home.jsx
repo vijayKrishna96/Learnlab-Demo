@@ -1,17 +1,23 @@
 import React from "react";
 import "../Home/Home.css";
+import Card from "../Carousel/courseCard";
 
 import { RxNotionLogo } from "react-icons/rx";
 import { CgDesignmodo } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { FaJsSquare } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
+import { LuMonitorPlay } from "react-icons/lu";
+import { PiStudentFill } from "react-icons/pi";
+import { GiTeacher } from "react-icons/gi";
+import Instructors from "../Carousel/Instructors";
+
 
 function Home() {
   return (
     <>
-      <section className="container mx-auto">
-        <div className="pt-44 h-[94vh]">
+      <section className=" bg-[#fddde6]">
+        <div className="pt-44 h-[94vh] container mx-auto ">
           <div className=" h-[60%] flex items-center justify-between p-36 bg-[#1c1c1e] text-white rounded-lg">
             <div className=" max-w-1/2">
               <h1 className="text-5xl leading-tight">
@@ -60,7 +66,7 @@ function Home() {
       </section>
 
       <section className="container mx-auto">
-        <div className="h-[100vh]">
+        <div className="">
           <div className="flex flex-col justify-center items-center mt-20 ">
             <h2 className="text-4xl font-semibold leading-tight">
               Worlds Largest
@@ -70,8 +76,74 @@ function Home() {
             </h2>
             <hr className="custom-line w-20 h-2 rounded-lg mx-auto mt-2 bg-[#ed145b]" />
           </div>
-          <div>
-            
+          <div className="grid grid-cols-3 justify-center gap-52 mt-20 w-full">
+            <div className="flex gap-10 justify-center  bg-[#fddde6] p-14 rounded-lg">
+              <LuMonitorPlay className="text-5xl bg-white rounded-full p-2" />
+              <div>
+                <h3 className="text-2xl font-semibold">1200+</h3>
+                <p>SpecialCourse</p>
+              </div>
+            </div>
+            <div className="flex gap-10 justify-center  bg-[#fddde6] p-14 rounded-lg">
+              <PiStudentFill className="text-5xl bg-white rounded-full p-2" />
+              <div>
+                <h3 className="text-2xl font-semibold">12500+</h3>
+                <p>Enrolled Students</p>
+              </div>
+            </div>
+            <div className="flex gap-10 justify-center  bg-[#fddde6] p-14 rounded-lg">
+              <GiTeacher className="text-5xl bg-white rounded-full p-2" />
+              <div>
+                <h3 className="text-2xl font-semibold">300+</h3>
+                <p>Expert Instructors</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="h-[100vh] container mx-auto">
+          <div className="flex flex-col justify-center items-center mt-20 ">
+            <h2 className="text-4xl font-semibold leading-tight">
+              Our Online Courses
+            </h2>
+            <hr className="custom-line w-20 h-2 rounded-lg mx-auto mt-2 bg-[#ed145b]" />
+          </div>
+          <div className="flex flex-col items-center ">
+            <div className="flex  gap-16 mt-10">
+              <button>All</button>
+              <button>Business</button>
+              <button>Design</button>
+              <button>Development</button>
+              <button>Marketing</button>
+              <button>Music</button>
+            </div>
+            <div className="grid grid-cols-4 gap-x-16 gap-y-5 mt-10">
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+            </div>
+          </div>
+        </div>
+        <Instructors/>
+      </section>
+      
+      <section className="bg-[#fddde6] h-[90vh]">
+        <div className="pt-20 mt-10 container mx-auto">
+          <div className="flex flex-col justify-center items-center">
+            <h2 className="text-4xl font-semibold leading-tight">
+              Expert Instructors
+            </h2>
+            <hr className="custom-line w-20 h-2 rounded-lg mx-auto mt-2 bg-[#ed145b]" />
+          </div>
+          <div className="">
+           
           </div>
         </div>
       </section>
