@@ -2,3 +2,7 @@
   background-color: rgb(116, 160, 160);
 }
 
+
+  .custom-grid {
+    justify-content: space-between;
+  }
