@@ -10,13 +10,16 @@ import { RiTailwindCssFill } from "react-icons/ri";
 import { LuMonitorPlay } from "react-icons/lu";
 import { PiStudentFill } from "react-icons/pi";
 import { GiTeacher } from "react-icons/gi";
-import Instructors from "../Carousel/Instructors";
-
+import Instructors from "../Carousel/instructors";
+import Feedback from "../Carousel/studentFeedback";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
     <>
-      <section className=" bg-[#fddde6]">
+
+      {/* Hero Section */}
+      <section className="Hero bg-[#fddde6]">
         <div className="pt-44 h-[94vh] container mx-auto ">
           <div className=" h-[60%] flex items-center justify-between p-36 bg-[#1c1c1e] text-white rounded-lg">
             <div className=" max-w-1/2">
@@ -65,6 +68,7 @@ function Home() {
         </div>
       </section>
 
+      {/* Tag */}
       <section className="container mx-auto">
         <div className="">
           <div className="flex flex-col justify-center items-center mt-20 ">
@@ -102,6 +106,7 @@ function Home() {
         </div>
       </section>
 
+      {/* Courses */}
       <section>
         <div className="h-[100vh] container mx-auto">
           <div className="flex flex-col justify-center items-center mt-20 ">
@@ -131,10 +136,10 @@ function Home() {
             </div>
           </div>
         </div>
-        <Instructors/>
       </section>
-      
-      <section className="bg-[#fddde6] h-[90vh]">
+
+      {/* Instructors */}
+      <section className="bg-[#fddde6] h-[80vh]">
         <div className="pt-20 mt-10 container mx-auto">
           <div className="flex flex-col justify-center items-center">
             <h2 className="text-4xl font-semibold leading-tight">
@@ -142,11 +147,35 @@ function Home() {
             </h2>
             <hr className="custom-line w-20 h-2 rounded-lg mx-auto mt-2 bg-[#ed145b]" />
           </div>
-          <div className="">
-           
+          <div className="mt-10">
+            <Instructors />
           </div>
         </div>
       </section>
+      
+      {/* Student Feedback */}
+      <section className="h-[90vh]">
+        <div className="pt-10 container mx-auto">
+          <div className="flex flex-col justify-center items-center">
+            <h2 className="text-4xl font-semibold leading-tight">
+              Student Feedback
+            </h2>
+            <hr className="custom-line w-20 h-2 rounded-lg mx-auto mt-2 bg-[#ed145b]" />
+          </div>
+          <div className="flex justify-end mr-28">
+              <Link className=" bg-gray-200 p-2 rounded-md text-sm">View All</Link>
+          </div>
+          <div className="flex items-center justify-center mt-16">
+            <div className="grid grid-cols-2 gap-x-40 gap-y-24 mt-10">
+              <Feedback />
+              <Feedback />
+              <Feedback />
+              <Feedback />
+            </div>
+          </div>
+        </div>
+      </section>
+
     </>
   );
 }
