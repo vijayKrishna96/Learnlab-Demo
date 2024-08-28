@@ -1,4 +1,5 @@
 
+import axios from "axios";
 import React, { useState } from "react";
 
 const CourseForm = () => {
@@ -84,7 +85,6 @@ const CourseForm = () => {
     formData.append("price", price);
     formData.append("instructor", instructor);
 
-
     if (image) {
       formData.append("image", image);
     }
@@ -108,28 +108,29 @@ const CourseForm = () => {
             `modules[${modIndex}][lessons][${lessonIndex}][resource]`,
             lesson.resource
           );
-          
         }
       });
     });
 
     try {
-        const response = await fetch("http://localhost:4500/course", {
-          method: "POST",
-          body: formData,
-        });
-  
-        if (response.ok) {
-          const data = await response.json();
-          console.log("Course created successfully:", data);
-          // Reset form or redirect as needed
-        } else {
-          console.error("Error creating course:", response.statusText);
-        }
-      } catch (error) {
-        console.error("Error:", error);
+      const response = await axios.post("http://localhost:4500/course", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      console.log("Course added successfully", response.data);
+    } catch (error) {
+      if (error.response) {
+        // Server responded with a status other than 2xx
+        console.error("Server responded with an error:", error.response.data);
+      } else if (error.request) {
+        // Request was made but no response received
+        console.error("No response received:", error.request);
+      } else {
+        // Something else caused the error
+        console.error("Error:", error.message);
       }
-
+    }
   };
 
   return (
@@ -270,7 +271,7 @@ const CourseForm = () => {
                   <label className="block text-gray-600">Lesson Resource</label>
                   <input
                     type="file"
-                    name="image"
+                    name="resource" // Corrected name
                     accept="image/*"
                     onChange={(e) =>
                       handleLessonFileChange(index, lessonIndex, e)

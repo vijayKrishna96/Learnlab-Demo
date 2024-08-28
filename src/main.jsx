@@ -9,6 +9,8 @@ import Root from './Root';
 import Login from './Login';
 import Admin from './admin'
 import Home from './Components/Home/Home';
+import CourseForm from './Components/AddCourse/CourseForm';
+
 
 const router = createBrowserRouter([
   {
@@ -22,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: '/admin',
         element: <Admin/>
+      },
+      {
+        path: '/addcourse',
+        element: <CourseForm/>
       }
     ]
   },
